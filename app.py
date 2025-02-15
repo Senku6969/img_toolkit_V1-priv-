@@ -88,7 +88,6 @@ def add_watermark(image, text, opacity=0.5):
     font = ImageFont.load_default()
     bbox = draw.textbbox((0, 0), text, font=font)
     x, y = img.size[0] - bbox[2] - 10, img.size[1] - bbox[3] - 10
-    draw.text((x+2, y+2), text, font=font, fill=(0, 0, 0, int(255*opacity)))
     draw.text((x, y), text, font=font, fill=(255, 255, 255, int(255*opacity)))
     return Image.alpha_composite(img, txt).convert('RGB')
 
@@ -117,6 +116,11 @@ def add_vignette(image, intensity=0.5):
         img_array[:,:,i] = img_array[:,:,i] * vignetteMap
         
     return Image.fromarray(img_array.astype(np.uint8))
+
+
+
+
+
 # UI-----------------------------------------------------------------------------------------------------------------
 st.set_page_config(layout="wide", page_title="AI Image Toolkit")
 st.title("Senku's Image Toolkit")
