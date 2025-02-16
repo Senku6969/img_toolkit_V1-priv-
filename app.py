@@ -125,6 +125,8 @@ def add_vignette(image, intensity=0.5):
 st.set_page_config(layout="wide", page_title="AI Image Toolkit")
 st.title("Senku's Image Toolkit")
 
+#test
+
 # sidebar
 with st.sidebar:
     uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
