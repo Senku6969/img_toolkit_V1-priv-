@@ -119,8 +119,6 @@ def add_vignette(image, intensity=0.5):
 
 
 
-
-
 # UI-----------------------------------------------------------------------------------------------------------------
 st.set_page_config(layout="wide", page_title="AI Image Toolkit")
 st.title("Senku's Image Toolkit")
@@ -129,7 +127,7 @@ st.title("Senku's Image Toolkit")
 
 # sidebar
 with st.sidebar:
-    uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png","webp","gif"])
     
     if uploaded_file:
         # Add download section in sidebar right after file upload
