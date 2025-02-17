@@ -119,19 +119,39 @@ def add_vignette(image, intensity=0.5):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # UI-----------------------------------------------------------------------------------------------------------------
 st.set_page_config(layout="wide", page_title="AI Image Toolkit")
 st.title("Senku's Image Toolkit")
-
-#test
 
 # sidebar
 with st.sidebar:
     uploaded_file = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png","webp","gif"])
     
     if uploaded_file:
-        # Add download section in sidebar right after file upload
-        st.markdown("---")  # Add a visual separator
+        st.markdown("---") 
+        
         st.header("Download")
         download_format = st.selectbox("Download Format", ["PNG", "JPEG", "WebP"], 
                                      help="Choose the format for your downloaded image")
@@ -172,16 +192,16 @@ with st.sidebar:
     elif feature == "Vignette Effect":
         vignette_intensity = st.slider("Intensity", 0.0, 1.0, 0.5)
 
-# mains---
+# Main Area -
 if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
     col1, col2 = st.columns(2)
     
-    # col1 = orignal img
+    # col1 (OG Image)
     with col1:
         st.image(image, caption="Original Image", use_column_width=True)
     
-    # col2 = processed img
+    # col2 (Final Image)
     with col2:
         with st.spinner("Processing..."):
             if feature == "Text OCR":
@@ -215,6 +235,10 @@ if uploaded_file:
                     result = apply_filter(image, filter_type)
                 
                 st.image(result, caption=f"After {feature}", use_column_width=True)
+    
+    
+    
+    
     
 # DOWNLOAD BUTTON 
     with st.sidebar:
