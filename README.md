@@ -30,7 +30,18 @@ PixelForge is an AI-powered image processing toolkit built with Python and Strea
    cd pixelforge
    ```
 
-2. Install dependencies:
+2. Create and activate virtual environment:
+   ```bash
+   # For Windows
+   python -m venv venv
+   venv\Scripts\activate
+
+   # For macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
