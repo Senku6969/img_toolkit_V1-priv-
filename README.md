@@ -1,24 +1,54 @@
-# img_toolkit_V1
-A simple CV powered toolkit w/ multi functionality. 
+# PixelForge - AI Image Toolkit
 
-# Core changes needed
+PixelForge is an AI-powered image processing toolkit built with Python and Streamlit. It offers a variety of powerful tools for enhancing, editing, and transforming images using machine learning models and traditional image processing techniques.
 
-1. Convert the App to Gradio
-2. Make it customizble (editable) - instead of single edit at a time - allow multiple edits
-3. Batch convertor (future af)
-4. Deploy on huggin faces maybe (BASICALLY A FULLY FUNCTIONAL ONLINE IMAEG TOOLKIT)
+## Features
+- **Basic Enhancement**: Adjust brightness, contrast, saturation, and sharpness.
+- **Color Effects**: Apply effects like Grayscale, Sepia, Negative, and Black & White.
+- **Edge Detection**: Detect edges using customizable thresholds.
+- **Background Removal**: Remove or replace image background with transparent or solid color.
+- **Watermarking**: Add customizable watermarks with adjustable opacity, position, and font size.
+- **Text OCR**: Extract text from images using Optical Character Recognition (OCR).
+- **Rotate & Resize**: Rotate images and resize by width, height, or both while maintaining aspect ratio.
+- **Vignette Effect**: Add a vignette effect with customizable intensity and color.
+- **Filters**: Apply various filters like Blur, Emboss, Contour, Sharpen, and more.
+- **Frame Addition**: Add customizable frames with solid, double, or shadow effects.
+- **Pixel Enhancement**: Enhance image quality through denoising, upscaling, and sharpening.
+- **Colorization**: Colorize grayscale images using machine learning.
 
-# Features to implement
+## 💻 Tech Stack
+- **Framework**: Streamlit
+- **Computer Vision**: OpenCV, Pillow
+- **AI Models**: Rembg (background removal), OpenCV Colorization
+- **OCR**: EasyOCR
+- **Image Processing**: NumPy, ImageEnhance
 
-1. Image Colorization (Colorize B&W photos using deep learning)
-2. Super Resolution (Upscale images using AI models like ESRGAN)
-3. Style Transfer (Apply artistic styles using pre-trained models)
-4. Object Detection (Identify multiple objects using YOLO)
-5. Background Replacement (After removal, add new background) ( maybe implement together with removal thingy)
+## ⚙️ Installation
+1. Clone repository:
+   ```bash
+   git clone https://github.com/yourusername/pixelforge.git
+   cd pixelforge
+   ```
 
-## look into - IMAGE captioning using LSTM and AI powered FACE Aging thingy + maybe a few more stuff TO THE MOON
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-# SIDE (smol) features to change/add ?
-1. Image denoising 
-2. Cartoonization (basic asf) - anime typa shit too
-3. basic things which LR can do 
+## 🖥️ Usage
+Run the Streamlit app:
+```bash
+streamlit run app.py
+```
+Access via browser at `http://localhost:8501`
+
+## 📦 Requirements
+- Python 3.8+
+- See [requirements.txt](requirements.txt) for full list
+
+**Note**: The colorization feature requires the following files in your project root:
+- `colorization_deploy_v2.prototxt`
+- `colorization_release_v2.caffemodel`
+- `pts_in_hull.npy`
+
+These can be downloaded from OpenCV's official repositories or using the provided installation commands.

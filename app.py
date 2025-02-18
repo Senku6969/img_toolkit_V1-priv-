@@ -12,7 +12,7 @@ def enhance_image(image, brightness=1.0, contrast=1.0, saturation=1.0, sharpness
     img = ImageEnhance.Contrast(img).enhance(contrast)
     img = ImageEnhance.Color(img).enhance(saturation)
     img = ImageEnhance.Sharpness(img).enhance(sharpness)
-    return img 
+    return img  
 
 def apply_color_effect(image, effect):
     img_array = np.array(image)
@@ -143,7 +143,9 @@ def add_vignette(image, intensity=0.5):
 
 # UI-----------------------------------------------------------------------------------------------------------------
 st.set_page_config(layout="wide", page_title="AI Image Toolkit")
-st.title("Senku's Image Toolkit")
+#st.title("Senku's Image Toolkit")
+st.title("PixelForge")
+st.write("Your AI Powered Image Toolkit")
 
 # sidebar
 with st.sidebar:
